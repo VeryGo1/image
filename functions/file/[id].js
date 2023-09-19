@@ -24,6 +24,8 @@ export async function onRequest(context) {  // Contents of context object
                 //show the image
                 return response;
             }
+			//解决同源问题
+			response.setHeader("Access-Control-Allow-Origin","*");
 
         if (typeof env.img_url == "undefined" || env.img_url == null || env.img_url == ""){}else{
             //check the record from kv
