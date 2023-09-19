@@ -26,6 +26,9 @@ export async function onRequest(context) {  // Contents of context object
             }
 			//解决同源问题
 			response.setHeader("Access-Control-Allow-Origin","*");
+			response.setHeader("Access-Control-Allow-Credentials", "true");
+			response.setHeader("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE, PUT");
+			response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
 
         if (typeof env.img_url == "undefined" || env.img_url == null || env.img_url == ""){}else{
             //check the record from kv
